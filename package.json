@@ -6,8 +6,8 @@
   "main": "./src/nodejs/index.js",
   "scripts": {
     "start": "node --experimental-modules src/nodejs/index.js",
-    "start:mongo": "brew services start mongodb/brew/mongodb-community",
-    "stop:mongo": "brew services stop mongodb/brew/mongodb-community"
+    "db:start": "brew services start mongodb/brew/mongodb-community",
+    "db:stop": "brew services stop mongodb/brew/mongodb-community"
   },
   "keywords": [
     "vue.js",
