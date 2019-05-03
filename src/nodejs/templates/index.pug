@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+    head
+        title Fastify Server / Mongo
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css', rel='stylesheet')
+        style(rel='stylesheet').
+            .subtitle { color: #2c9687 }
+    body
+        section.section
+            #container
+                h1.title Users from MongoDB:
+
+                ul.subtitle
+                    each user in users
+                        li - #{ user.name }
+    script(type='text/javascript', src='static/app.js')

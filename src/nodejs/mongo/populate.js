@@ -11,9 +11,9 @@ const
 
     await db.collection("users").insertMany(
         [
-            { user: "Andrey" },
-            { user: "Anna" },
-            { user: "Sergey" },
+            { name: "Andrey", balance: 100 },
+            { name: "Anna",   balance: 200 },
+            { name: "Sergey", balance: 300 },
         ]
     );
 

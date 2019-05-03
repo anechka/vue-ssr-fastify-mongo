@@ -17,9 +17,11 @@
   ],
   "author": "Anna Novikova (anna@novikova.us)",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "fastify": "^2.3.0",
+    "fastify-static": "^2.4.0",
     "mongodb": "^3.2.3",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.3"
   }
 }
