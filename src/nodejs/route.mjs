@@ -1,27 +1,53 @@
 import pug from 'pug'
 
-const indexTemplate = pug.compileFile('src/nodejs/templates/index.pug');
-
 export default
 function setRoutes(db) {
-    return {
-        async index(request, reply) {
+    const
+        indexTemplate = pug.compileFile(
+            'src/nodejs/templates/index.pug',
+            { pretty: true }
+        ),
+        mongo = {
+            async getAllUsers(truncate = false) {
+                const mongoFilter = {
+                    projection: { name: 1, balance: 1, "_id": false }
+                };
 
-            const users = await db.collection("users").find({}).toArray();
+                return await db.
+                collection("users")
+                    .find( { }, truncate && mongoFilter )
+                    .toArray();
+            }
+        };
+
+    return {
+
+        async index(request, response) {
+
+            const users = await mongo.getAllUsers();
+
+            console.log(`users:`);
+            console.log(users);
 
             const HTML = indexTemplate({
                 users
             });
 
-            reply.type('text/html; charset=UTF-8');
+            response.type('text/html; charset=UTF-8');
 
             return HTML
         },
-        appJS(request, reply) {
-            reply.sendFile('app.js')
+
+        async getJSON(request, response) {
+            return await mongo.getAllUsers(true)
         },
-        icon(request, reply) {
-            reply.type('image/x-icon').code(200).send()
+
+        appJS(request, response) {
+            response.sendFile('app.js')
+        },
+
+        icon(request, response) {
+            response.type('image/x-icon').code(200).send()
         }
     }
 }

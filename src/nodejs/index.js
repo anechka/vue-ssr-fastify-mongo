@@ -43,6 +43,8 @@ const
             // Declare a routes
             // app.js
             server.get('/static/app.js', routes.appJS);
+            // API JSON
+            server.get('/users', routes.getJSON);
             // favicon
             server.get('/favicon.ico', routes.icon);
             // index route
