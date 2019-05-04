@@ -23,6 +23,7 @@
     "deasync": "^0.1.15",
     "fastify": "^2.3.0",
     "fastify-static": "^2.4.0",
+    "ky": "^0.10.0",
     "mongodb": "^3.2.3",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.3",
@@ -32,7 +33,15 @@
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
     "@vue/component-compiler-utils": "^3.0.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "babel": {
+    "presets": [ "@babel/preset-env" ],
+    "ignore": [
+      "node_modules"
+    ]
+  },
+  "browserslist": "> 5% in US, not dead, safari > 10, firefox ESR, ios > 7"
 }

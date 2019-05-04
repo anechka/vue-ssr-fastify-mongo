@@ -5,22 +5,30 @@
 </template>
 
 <script>
-    import Users from "./components/Users.vue"
+    import ky from 'ky'
+    import Users from './components/Users.vue'
+
+    const jsonUsersApi = 'http://127.0.0.1:3000/users'
 
     export default {
-        el: "#container",
+        el: '#container',
         data() {
             return {
-                usersArray: ['Anna', 'Andrey']
+                usersArray: []
             }
         },
         components: {
             Users
         },
         methods: {
+            async getUsers() {
+                this.usersArray = await ky.get(jsonUsersApi).json()
+            }
         },
         mounted() {
-            console.log("Vue running...");
+            console.log(`Vue running`);
+
+            this.getUsers()
         }
     }
 </script>
@@ -39,6 +47,6 @@
 
         padding 0 25px
 
-        background-color darken(grey-color, 1.7%)
+        background-color lighten(grey-color, 5%)
 
 </style>
