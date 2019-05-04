@@ -17,7 +17,20 @@
     }
 </script>
 
-<style lang="sss">
-    BODY
-        font-family: "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif
+<style lang="stylus">
+    @import "stylus/main"
+
+    #container
+        display grid
+
+        width 100%
+        max-width 960px
+
+        align-items center
+        justify-self center
+
+        padding 0 25px
+
+        background-color darken(grey-color, 10%)
+
 </style>
