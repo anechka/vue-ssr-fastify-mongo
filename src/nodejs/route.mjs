@@ -26,9 +26,6 @@ function setRoutes(db) {
 
             const users = await mongo.getAllUsers();
 
-            console.log(`users:`);
-            console.log(users);
-
             const HTML = indexTemplate({
                 users
             });

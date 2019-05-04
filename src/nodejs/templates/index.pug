@@ -4,14 +4,9 @@ html(lang='en')
         title Fastify Server / Mongo
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(href='static/index.css', rel='stylesheet')
-        style(rel='stylesheet').
-            .subtitle { color: #2c9687 }
     body
         section.section
             #container
-                h1.title Users from MongoDB:
-
-                ul.subtitle
-                    each user in users
-                        li - #{ user.name }
+                noscript
+                    h1.title Please enable JavaScript
     script(type='text/javascript', src='static/index.js')

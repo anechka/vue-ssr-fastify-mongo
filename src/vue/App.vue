@@ -1,13 +1,21 @@
 <template lang="pug">
     #container
-        h1.title Vue app
+        h1.title Users from MongoDB:
+        Users(:users="usersArray")
 </template>
 
 <script>
+    import Users from "./components/Users.vue"
+
     export default {
         el: "#container",
         data() {
-            return {}
+            return {
+                usersArray: ['Anna', 'Andrey']
+            }
+        },
+        components: {
+            Users
         },
         methods: {
         },
@@ -31,6 +39,6 @@
 
         padding 0 25px
 
-        background-color darken(grey-color, 10%)
+        background-color darken(grey-color, 1.7%)
 
 </style>
