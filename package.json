@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node --experimental-modules src/nodejs/index.js",
     "db:start": "brew services start mongodb/brew/mongodb-community",
-    "db:stop": "brew services stop mongodb/brew/mongodb-community"
+    "db:stop": "brew services stop mongodb/brew/mongodb-community",
+    "dev": "parcel src/vue/index.js --out-dir static/ --public-url http://127.0.0.1:3000/static/",
+    "watch": "parcel watch src/vue/index.js --out-dir static/ --public-url http://127.0.0.1:3000/static/"
   },
   "keywords": [
     "vue.js",
@@ -18,10 +20,18 @@
   "author": "Anna Novikova (anna@novikova.us)",
   "license": "MIT",
   "dependencies": {
+    "deasync": "^0.1.15",
     "fastify": "^2.3.0",
     "fastify-static": "^2.4.0",
     "mongodb": "^3.2.3",
     "parcel-bundler": "^1.12.3",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "sugarss": "^2.0.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
