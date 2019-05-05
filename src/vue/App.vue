@@ -25,7 +25,7 @@
                 this.usersArray = await ky.get(jsonUsersApi).json()
             }
         },
-        mounted() {
+        created() {
             console.log(`Vue running`);
 
             this.getUsers()
@@ -37,16 +37,13 @@
     @import "stylus/main"
 
     #container
-        display grid
-
         width 100%
         max-width 960px
-
-        align-items center
-        justify-self center
-
-        padding 0 25px
+        margin 0 2em
 
         background-color lighten(grey-color, 5%)
+
+        h1.title
+            padding 0 1.5em
 
 </style>
