@@ -10,11 +10,8 @@
     export default {
         name: 'Users',
         data() {
-            return {
-                gamers: ['Andrey']
-            }
+            return {}
         },
-        // props: ['users'],
         props: {
             users: Array
         },

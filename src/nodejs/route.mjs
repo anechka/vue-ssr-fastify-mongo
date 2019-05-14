@@ -1,4 +1,10 @@
 import pug from 'pug'
+import Vue from 'vue'
+import VueSR from 'vue-server-renderer'
+import VueApp from './App'
+
+const renderer = VueSR.createRenderer()
+const app = new Vue(VueApp)
 
 export default
 function setRoutes(db) {
@@ -24,11 +30,17 @@ function setRoutes(db) {
 
         async index(request, response) {
 
-            const users = await mongo.getAllUsers();
+            const
+                users = await mongo.getAllUsers(),
+                vueHTML = await renderer.renderToString(app),
 
-            const HTML = indexTemplate({
-                users
-            });
+
+                HTML = indexTemplate({
+                    users,
+                    vueHTML
+                });
+
+            console.log(vueHTML)
 
             response.type('text/html; charset=UTF-8');
 
